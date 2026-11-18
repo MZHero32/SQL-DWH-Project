@@ -1,4 +1,13 @@
--- Reset the project database. Re-running this script deletes its existing data.
+/*
+# Initialize the data warehouse
+
+- Switch to `master`, then drop `datawarehouse` if it exists. SQL Server disconnects other sessions and rolls back their uncommitted transactions.
+- Create a fresh `datawarehouse` database and switch the session to it.
+- Create `bronze` for raw data, `silver` for cleaned data, and `gold` for reporting and analysis.
+
+> **Re-running this script deletes the existing `datawarehouse` database and all its data.**
+*/
+
 USE master;
 GO
 
